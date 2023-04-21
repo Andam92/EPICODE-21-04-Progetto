@@ -18,7 +18,7 @@ public class CustomUserDetailsService implements UserDetailsService {
 
     private UserRepository userRepository;
 
-    public CustomUserDetailsService(UserRepository userRepository) {
+    public CustomUserDetailsService(UserRepository userRepository) { 
         this.userRepository = userRepository;
     }
     
@@ -29,7 +29,7 @@ public class CustomUserDetailsService implements UserDetailsService {
                  .orElseThrow(() ->
                          new UsernameNotFoundException("User not found with username or email: "+ usernameOrEmail));
 
-        Set<GrantedAuthority> authorities = user
+        Set<GrantedAuthority> authorities = user 
                 .getRoles()
                 .stream()
                 .map((role) -> new SimpleGrantedAuthority(role.getRoleName().toString())).collect(Collectors.toSet());
