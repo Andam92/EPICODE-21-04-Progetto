@@ -51,7 +51,7 @@ public class AuthRunner implements ApplicationRunner {
 		//ASSIGNS DEVICE TO USER
 //		User u1 = userRepository.findById(1l).get();
 //		Device d1 = deviceRepository.findById(1l).get();
-//		u1.getDeviceList().add(d1);
+//		u1.getDeviceList().add(d1);  
 //		userRepository.save(u1);
 	}
 	
