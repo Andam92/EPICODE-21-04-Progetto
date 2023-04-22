@@ -1,0 +1,656 @@
+{
+	"info": {
+		"_postman_id": "75e00e1a-733d-43e5-b0e8-29a30f75f8cc",
+		"name": "Spring_Security",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25789399"
+	},
+	"item": [
+		{
+			"name": "Registrazione User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Homer Simpson\",\r\n    \"username\": \"MrDonut\",\r\n    \"email\": \"prova123@springfield.it\",\r\n    \"password\": \"springfield123\",\r\n    \"roles\": [\"ROLE_USER\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/auth/signup",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"MrDonut\",\r\n    \"password\": \"springfield123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/auth/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login Admin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"Quimbyking\",\r\n    \"password\": \"qwerty\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/auth/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login Moderator",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"elbarto\",\r\n    \"password\": \"abc123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/auth/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get logged User",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJwcm92YTEyM0BzcHJpbmdmaWVsZC5pdCIsImlhdCI6MTY4MjE1MjEwOCwiZXhwIjoxNjgyNzU2OTA4fQ.vuPnykmAy2-pUvJgld1E0JcDN6lZIwrG4ZFD_hhOHA5XWcDBZJh2M5KFQZHWSN2x",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"MrDonut\",\r\n    \"password\": \"springfield123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/users/MrDonut",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users",
+						"MrDonut"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get logged Admin",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbkBzcHJpbmdmaWVsZC5pdCIsImlhdCI6MTY4MjE1MzEyMSwiZXhwIjoxNjgyNzU3OTIxfQ.hj_UoMv5xp7jpmTUAfibCHpaAhF_HwTAZX2en3AxrNZL1uThUs_a7yrg73jKaxgg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"Quimbyking\",\r\n    \"password\": \"qwerty\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/users/Quimbyking",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users",
+						"Quimbyking"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all users (admin auth only)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbkBzcHJpbmdmaWVsZC5pdCIsImlhdCI6MTY4MjE1MzEyMSwiZXhwIjoxNjgyNzU3OTIxfQ.hj_UoMv5xp7jpmTUAfibCHpaAhF_HwTAZX2en3AxrNZL1uThUs_a7yrg73jKaxgg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/users",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get device by User id (admin auth only)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbkBzcHJpbmdmaWVsZC5pdCIsImlhdCI6MTY4MjE1MzEyMSwiZXhwIjoxNjgyNzU3OTIxfQ.hj_UoMv5xp7jpmTUAfibCHpaAhF_HwTAZX2en3AxrNZL1uThUs_a7yrg73jKaxgg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"MrDonut\",\r\n    \"password\": \"springfield123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/users/devices/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users",
+						"devices",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Registrazione Admin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Sindaco Quimby\",\r\n    \"username\": \"Quimbyking\",\r\n    \"email\": \"admin@springfield.it\",\r\n    \"password\": \"qwerty\",\r\n    \"roles\": [\"ROLE_ADMIN\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/auth/signup",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Registrazione Moderator",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Bart Simpson\",\r\n    \"username\": \"elbarto\",\r\n    \"email\": \"moderator@springfield.it\",\r\n    \"password\": \"abc123\",\r\n    \"roles\": [\"ROLE_MODERATOR\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/auth/signup",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all Devices",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbkBzcHJpbmdmaWVsZC5pdCIsImlhdCI6MTY4MjE1MzEyMSwiZXhwIjoxNjgyNzU3OTIxfQ.hj_UoMv5xp7jpmTUAfibCHpaAhF_HwTAZX2en3AxrNZL1uThUs_a7yrg73jKaxgg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/devices",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"devices"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get single Device by ID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbkBzcHJpbmdmaWVsZC5pdCIsImlhdCI6MTY4MjE1MzEyMSwiZXhwIjoxNjgyNzU3OTIxfQ.hj_UoMv5xp7jpmTUAfibCHpaAhF_HwTAZX2en3AxrNZL1uThUs_a7yrg73jKaxgg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/devices/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"devices",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete single Device by ID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJtb2RlcmF0b3JAc3ByaW5nZmllbGQuaXQiLCJpYXQiOjE2ODIxNTYzNjgsImV4cCI6MTY4Mjc2MTE2OH0.c66Zh4Q-dkXY7NcbkOtfOkMXSd4H54kjcAmQmP5gyu13MSQmd5iCTpuQmk_iDdWa",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/devices/56",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"devices",
+						"56"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete single User by ID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJtb2RlcmF0b3JAc3ByaW5nZmllbGQuaXQiLCJpYXQiOjE2ODIxNTYzNjgsImV4cCI6MTY4Mjc2MTE2OH0.c66Zh4Q-dkXY7NcbkOtfOkMXSd4H54kjcAmQmP5gyu13MSQmd5iCTpuQmk_iDdWa",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/users/5",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get single Device by Serial",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbkBzcHJpbmdmaWVsZC5pdCIsImlhdCI6MTY4MjE1MzEyMSwiZXhwIjoxNjgyNzU3OTIxfQ.hj_UoMv5xp7jpmTUAfibCHpaAhF_HwTAZX2en3AxrNZL1uThUs_a7yrg73jKaxgg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/devices/serial/2982",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"devices",
+						"serial",
+						"2982"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add new Device (Moderator only)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJtb2RlcmF0b3JAc3ByaW5nZmllbGQuaXQiLCJpYXQiOjE2ODIxNTYzNjgsImV4cCI6MTY4Mjc2MTE2OH0.c66Zh4Q-dkXY7NcbkOtfOkMXSd4H54kjcAmQmP5gyu13MSQmd5iCTpuQmk_iDdWa",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \r\n    \"device_status\": \"AVAILABLE\",\r\n    \"device_type\": \"LAPTOP\",\r\n    \"serialNumber\": 5672\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/devices",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"devices"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add new User (Moderator only)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJtb2RlcmF0b3JAc3ByaW5nZmllbGQuaXQiLCJpYXQiOjE2ODIxNTYzNjgsImV4cCI6MTY4Mjc2MTE2OH0.c66Zh4Q-dkXY7NcbkOtfOkMXSd4H54kjcAmQmP5gyu13MSQmd5iCTpuQmk_iDdWa",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \r\n    \"name\": \"Arbrham Simpson\",\r\n    \"username\": \"grandpa\",\r\n    \"email\": \"help@springfield.it\",\r\n    \"password\": \"sonovecchio\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/users",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Device (Moderator only)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJtb2RlcmF0b3JAc3ByaW5nZmllbGQuaXQiLCJpYXQiOjE2ODIxNTYzNjgsImV4cCI6MTY4Mjc2MTE2OH0.c66Zh4Q-dkXY7NcbkOtfOkMXSd4H54kjcAmQmP5gyu13MSQmd5iCTpuQmk_iDdWa",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \r\n\r\n        \"device_status\": \"MAINTAINANCE\",\r\n        \"device_type\": \"LAPTOP\",\r\n        \"serialNumber\": 123\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/devices/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"devices",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit User(Moderator only)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJtb2RlcmF0b3JAc3ByaW5nZmllbGQuaXQiLCJpYXQiOjE2ODIxNTYzNjgsImV4cCI6MTY4Mjc2MTE2OH0.c66Zh4Q-dkXY7NcbkOtfOkMXSd4H54kjcAmQmP5gyu13MSQmd5iCTpuQmk_iDdWa",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \r\n    \"name\": \"Arbrham Simpson\",\r\n    \"username\": \"grandpa\",\r\n    \"email\": \"help@springfield.it\",\r\n    \"password\": \"password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/users/5",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users",
+						"5"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
