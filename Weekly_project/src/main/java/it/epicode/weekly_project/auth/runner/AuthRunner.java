@@ -24,59 +24,70 @@ import it.epicode.weekly_project.auth.security.CustomUserDetailsService;
 import it.epicode.weekly_project.auth.service.AuthService;
 import it.epicode.weekly_project.auth.service.DeviceService;
 
-
 @Component
 public class AuthRunner implements ApplicationRunner {
-	
-	@Autowired RoleRepository roleRepository;
-	@Autowired UserRepository userRepository;
-	@Autowired DeviceRepository deviceRepository;
-	@Autowired PasswordEncoder passwordEncoder;
-	@Autowired AuthService authService;
-	@Autowired CustomUserDetailsService userService;
-	@Autowired DeviceService deviceService;
-	
+
+	@Autowired
+	RoleRepository roleRepository;
+	@Autowired
+	UserRepository userRepository;
+	@Autowired
+	DeviceRepository deviceRepository;
+	@Autowired
+	PasswordEncoder passwordEncoder;
+	@Autowired
+	AuthService authService;
+	@Autowired
+	CustomUserDetailsService userService;
+	@Autowired
+	DeviceService deviceService;
+
 	private Set<Role> adminRole;
 	private Set<Role> moderatorRole;
 	private Set<Role> userRole;
-	
+
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 		System.out.println("Run...");
-		//setRoleDefault();
+
+		// ⚠️ ATTENZIONE!!! ⚠️ Avviare 1 volta questo runner per creare i ruoli
+		// decommentando il metodo sottostante,
+		// altrimenti è impossibile creare utenti!
 		
-		//ADDS DEVICE
-		//deviceService.createDevice(Device_type.SMARTPHONE);
-		
-		//ASSIGNS DEVICE TO USER
+		// setRoleDefault();
+
+		// ADDS DEVICE
+		// deviceService.createDevice(Device_type.SMARTPHONE);
+
+		// ASSIGNS DEVICE TO USER
 //		User u1 = userRepository.findById(1l).get();
 //		Device d1 = deviceRepository.findById(1l).get();
 //		u1.getDeviceList().add(d1);  
 //		userRepository.save(u1);
 	}
-	
+
 	private void setRoleDefault() {
 		Role admin = new Role();
 		admin.setRoleName(ERole.ROLE_ADMIN);
 		roleRepository.save(admin);
-		
+
 		Role user = new Role();
 		user.setRoleName(ERole.ROLE_USER);
 		roleRepository.save(user);
-		
+
 		Role moderator = new Role();
 		moderator.setRoleName(ERole.ROLE_MODERATOR);
 		roleRepository.save(moderator);
-		
+
 		adminRole = new HashSet<Role>();
 		adminRole.add(admin);
 		adminRole.add(moderator);
 		adminRole.add(user);
-		
+
 		moderatorRole = new HashSet<Role>();
 		moderatorRole.add(moderator);
 		moderatorRole.add(user);
-		
+
 		userRole = new HashSet<Role>();
 		userRole.add(user);
 	}
